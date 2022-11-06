@@ -68,7 +68,7 @@ class AlbumSong(models.Model):
         related_name=u'album_songs',
         on_delete=models.CASCADE,
         blank=False,
-        null=False
+        null=True
     )
 
     song = models.ForeignKey(

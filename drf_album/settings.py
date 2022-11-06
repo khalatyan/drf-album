@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'adminsortable2',
     'rest_framework',
+    'drf_yasg',
 
     'album',
 ]
