@@ -65,6 +65,7 @@ class AlbumSong(models.Model):
     album = models.ForeignKey(
         Album,
         verbose_name=u'Альбом',
+        related_name=u'album_songs',
         on_delete=models.CASCADE,
         blank=False,
         null=False
