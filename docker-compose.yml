@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/drf_test
+    ports:
+      - '8000:8000'
+    depends_on:
+      - mysql
+  mysql:
+    platform: linux/amd64
+    image: mysql:5.7
+    ports:
+      - '8889'
+    environment:
+      MYSQL_DATABASE: 'drf_album'
+      MYSQL_USER: 'root'
+      MYSQL_PASSWORD: 'root'
+      MYSQL_ROOT_PASSWORD: 'root'
+    restart: always
+    volumes:
+      - ./db_django:/var/lib/mysql
